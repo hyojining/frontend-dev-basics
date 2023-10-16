@@ -5,8 +5,15 @@
 <title>리스트를 이용한 메뉴 만들기</title>
 <link rel="stylesheet" type="text/css" href="/ch05/css/tabbox.css"></link>
 <script>
+liSelected = null;
+
 function onTabClicked(li){
+	if(liSelected != null){
+		liSelected.className = '';
+	}
+	
 	li.className='selected';
+	liSelected = li;
 }
 	
 </script>
