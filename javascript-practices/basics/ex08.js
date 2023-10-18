@@ -37,11 +37,12 @@ console.log(f);
 f.another.print();
 
 console.log("====== 확장(기본타입은 확장되지 않는다.) ======");
-var i1 = 10;
-var i2 = new Number(10);
+var i1 = 10;                // 기본타입
+var i2 = new Number(10);    // 객체
 
 console.log(i1, i2, i1 + i2);
 
+// 객체는 확장 가능
 i2.another = {
     name: '마이콜',
     age: 30,
@@ -49,5 +50,6 @@ i2.another = {
 
 console.log(i2);
 
+// 기본타입은 확장 불가능
 i1.another ={};             // 유사객체로 변환된다: new Number(i1).another = {};
 console.log(i1.another);    // 유사객체로 변환된다: console.log(new Number(i1).another)

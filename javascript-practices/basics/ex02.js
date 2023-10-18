@@ -51,6 +51,7 @@ console.log(i + ":" + typeof(i));
 console.log(s + ":" + typeof(s));
 console.log(b + ":" + typeof(b));
 
+
 console.log("====== 객체타입(object) ======");
 var i2 = new Number(10);
 var s2 = new String('hello');
@@ -76,6 +77,7 @@ console.log(a2 + ":" + typeof(a2) + ":" + (a2 instanceof(Array)));
 console.log(re2 + ":" + typeof(re2) + ":" + (re2 instanceof(RegExp)));
 console.log(n + ":" + typeof(n));
 
+
 console.log("====== 객체타입(function) ======");
 
 function f1(a, b){
@@ -95,4 +97,5 @@ console.log(f3(10, 20) + ":" + typeof(f3) + ":" + (f3 instanceof(Function)));
 // 유사 객체
 console.log("====== 원시 타입도 메소드를 호출할 수 있다.(유사객체) ======");
 console.log(b2.valueOf());
+// 원시 불리언 값 b를 객체로 변환한 후, 그 객체의 valueOf() 메서드를 호출하여 다시 해당 원시 값에 액세스
 console.log(b.valueOf());   // console.log(new Boolean(b).valueOf())

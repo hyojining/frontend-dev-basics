@@ -26,9 +26,8 @@ console.log(parseInt('11') + 1);        // 12
 // ===
 // 1. 타입의 동일성
 // 2. 타입이 같은 경우
-//    1) primitve type: 값의 동일성
+//    1) primitive type: 값의 동일성
 //    2) 객체 type: 객체의 동일성
-
 console.log('4' === 4);
 console.log(true === 1);
 console.log('abc' === new String('abc'));

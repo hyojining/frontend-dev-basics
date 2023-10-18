@@ -8,6 +8,7 @@ var MyObject = function(name, age) {
     this.age = age;
 }
 
+// 상속
 MyObject.prototype.school = 'bitacademy';
 MyObject.prototype.course = 'java fullstack';
 MyObject.prototype.info = function() {
@@ -22,7 +23,7 @@ o1.info();
 
 // MyObject 인스턴스 생성2
 var o2 = new MyObject("둘리", 10);
-o2.info = function() {
+o2.info = function() { // 오버라이딩
     console.log('안 알라쥼~');
 }
 o2.info();
