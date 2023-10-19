@@ -31,6 +31,8 @@ fruits.reverse();
 console.log(fruits);
 
 // shift
+// 배열에서 첫 번째 요소를 제거하고 해당 요소를 반환한다.
+// 배열의 길이가 1만큼 감소하고, 배열의 모든 요소가 한 칸씩 앞으로 이동한다.
 console.log("====== shift ======");
 var numbers = [1000, 2000, 3000, 4000, 5000, 6000];
 var number = numbers.shift();
@@ -38,7 +40,7 @@ console.log(number, numbers);
 
 // slice
 console.log("====== slice ======");
-var numbers2 = numbers.slice(1, 3);
+var numbers2 = numbers.slice(1, 3); // index: 1, 2
 console.log(numbers2);
 
 // splice1: index에서 count개를 삭제하고 삭제된 요소를 배열로 반환
@@ -60,5 +62,5 @@ console.log(a3);
 
 // splice3: insert(1, 10) 처럼 작동
 var a4 = [0, 1, 2, 3, 4];
-a4.splice(1,0, 10);
+a4.splice(1, 0, 10); // index가 1인 곳에 10 삽입
 console.log(a4);
