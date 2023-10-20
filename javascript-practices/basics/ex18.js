@@ -13,24 +13,23 @@
 
 /* Lexical Scope */
 var f1 = function() {
-    const s = "Hello World";
+    const s = "Hello World"; // s 변수는 f1의 스코프에 정의됨
     const inner = function() {
-        console.log(s);
+        console.log(s); // inner 함수는 외부 함수 f1의 스코프에 접근 가능
     }
-    inner();
+    inner(); // inner 함수 내에서 s 변수 출력
 };
 
 f1();
 
 /* Closure */
 const f2 = function() {
-    const s = "Hello World";
+    const s = "Hello World"; // s 변수는 f2의 스코프에 정의됨
     const inner = function() {
-        console.log(s);
+        console.log(s); // inner 함수는 외부 함수 f2의 스코프에 접근 가능
     }
     return inner;
 }
 
-const closure = f2();
-closure(); // 밖에서 호출
-
+const closure = f2(); // f2 함수 호출 후 inner 함수 반환
+closure(); // 반환된 inner 함수를 밖에서 호출, 여전히 f2의 스코프에 접근 가능
