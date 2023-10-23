@@ -19,17 +19,37 @@ var images = [
 
 var changeImage = function() {
 	// 랜덤 변수 
-	var indew = Math.floor(Math.random() * images.length);
+	var index = Math.floor(Math.random() * images.length);
 	var info = images[index].split(":");
+	
 	console.log(info);
+	
+	var title = info[0];
+	var src = '/ch07/images/' + info[1];
+	$("img")
+		.attr('src', src)
+		.attr('alt', title)
+		.attr('title', title);
 }
 
-$(function(){
+var intervalId;
 
-	$("button").click(function(){
+$(function(){
+	$("#btn-change").click(function(){
 		changeImage();
 	});
 	
+	$("#btn-slideshow").click(function(){
+		if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+            $("#btn-slideshow").text("슬라이드쇼 시작");
+        } else {
+            changeImage();
+            intervalId = setInterval(changeImage, 1000);
+            $("#btn-slideshow").text("슬라이드쇼 중지");
+        }
+	});
 });
 </script>
 </head>
@@ -40,7 +60,7 @@ $(function(){
 			<button id="btn-slideshow">슬라이드쇼 시작</button>
 		</div>
 		<div>
-			<img src="/ch07/images/Desert.jpg" alt="사막", title="사막"/>
+			<img/>
 		</div>
 	</div>
 </body>
