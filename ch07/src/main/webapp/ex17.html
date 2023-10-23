@@ -6,7 +6,9 @@
 <script>
 $(function(){
 	setTimeout(function(){
-		$("#p1").text('안녕하세요');
+		$("#p1").text('안녕하세요'); // "p1"인 <p> 요소의 텍스트 내용을 "안녕하세요"로 변경
+		// ID가 "p2"인 <p> 요소의 텍스트 내용을 <strong>안녕하세요</strong>로 변경
+		// 이 때, HTML 태그가 텍스트로 인식되어 HTML 엔티티로 표시
 		$("#p2").text('<strong>안녕하세요</strong>');
 		console.log($('#p3').text());
 		console.log($('#p4').text());
@@ -29,7 +31,7 @@ $(function(){
 		> -> &gt;
 		' -> &quot;
 	-->
-	<h4>Back &amp; White</h4>
-	<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that</h4>	
+	<h4>Black &amp; White</h4> <!-- Black & White -->
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that</h4>	<!--      that -->
 </body>
 </html>

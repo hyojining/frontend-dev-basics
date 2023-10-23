@@ -6,8 +6,8 @@
 <script>
 $(function(){
 	setTimeout(function(){
-		$('li:contains("샘플")').css('color', 'red');
-		$('li:has("strong")').css('color', 'blue');
+		$('li:contains("샘플")').css('color', 'red'); // 텍스트 내에 "샘플"이 포함된 모든 <li> 요소
+		$('li:has("strong")').css('color', 'blue'); // 하위에 <strong> 요소를 포함한 모든 <li>
 	}, 1000);
 });
 </script>

@@ -6,9 +6,9 @@
 <script>
 $(function(){
 	setTimeout(function(){
-		$('li[id]').css('color', 'red'); // id 있는 li
-		$('li[class="second"]').css('color', 'blue'); // class가 second인 li
-		$('li[class!="second"]').css('font-weight', 'bold');
+		$('li[id]').css('color', 'red'); // id 속성을 가지고 있는 모든 <li> 요소
+		$('li[class="second"]').css('color', 'blue'); // class 속성이 "second"인 모든 <li> 요소
+		$('li[class!="second"]').css('font-weight', 'bold'); // class 속성이 "second"가 아닌 모든 <li> 요소
 	}, 1000);
 });
 </script>

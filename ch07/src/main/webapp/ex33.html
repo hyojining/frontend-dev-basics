@@ -28,10 +28,10 @@ li.on	{ background-color:#287FC2; color:#fff }
 $(function(){
 	$("ul li")
 		.mouseover(function() {
-			$(this).addClass("on");
+			$(this).addClass("on"); // 마우스가 메뉴 항목 위에 올라갈 때 해당 항목에 "on" 클래스를 추가
 		})
 		.mouseout(function() {
-			$(this).removeClass("on");
+			$(this).removeClass("on"); // 마우스가 메뉴 항목을 벗어날 때 "on" 클래스를 제거
 		})
 });  
 </script>

@@ -6,6 +6,8 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		// ID가 "p1"인 <p> 요소의 HTML 내용을 <strong>1.안녕하세요</strong>로 변경
+		// HTML 태그가 정상적으로 해석되고 렌더링된다.
 		$('#p1').html('<strong>1.안녕하세요</strong>');
 		console.log($('#p2').html());
 	}, 1000);
