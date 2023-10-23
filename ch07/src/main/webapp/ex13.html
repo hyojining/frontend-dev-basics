@@ -6,6 +6,9 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$('li[id]').css('color', 'red'); // id 있는 li
+		$('li[class="second"]').css('color', 'blue'); // class가 second인 li
+		$('li[class!="second"]').css('font-weight', 'bold');
 	}, 1000);
 });
 </script>
