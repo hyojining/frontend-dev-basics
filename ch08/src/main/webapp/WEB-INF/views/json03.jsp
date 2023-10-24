@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>  
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,19 +9,33 @@
 <title>Insert title here</title>
 <script src="${pageContext.request.contextPath }/jquery/jquery-3.7.1.js"></script>
 <script>
-$(function() {
-	$('button').click(function() {
+$(function(){
+	var vo = {
+		name: '둘리',
+		password: '1234',
+		contents: '호이~'	
+	};
+	
+	
+	$('button').click(function(){
+		
+		console.log($.param(vo));
+		
 		$.ajax({
-			url: '${pageContext.request.contextPath }/api/json',
+			url: '${pageContext.request.contextPath }/api/post01',
 			async: true,
-			type: 'get',
+			type: 'post',
 			dataType: 'json',
+			contentType: 'application/x-www-form-urlencoded',
+			data: $.param(vo),
 			success: function(response) {
+				console.log(response);
+				/*
 				if(response.result !== "success") {
-					console.log(response.message);
+					console.error(response.message);
 					return;
 				}
-				
+
 				var vo = response.data;
 				
 				var htmls = "";
@@ -30,18 +44,19 @@ $(function() {
 				htmls += ("<h5>" + vo.contents + "</h5>");
 				
 				$("#data").html(htmls);
+				*/
 			},
 			error: function(xhr, status, error) {
-				console.error(status, error);
+				console.error(status, error);				
 			}
-		});
+		});	
 	});
 });
 </script>
 </head>
 <body>
 	<h1>AJAX Test: JSON Format Data: $.ajax({}) 함수 사용하기</h1>
-	<button>데이터 가져오기(GET)</button>
+	<button>데이터 보내기(POST, PUT, DELETE)</button>
 	<div id='data'></div>
 </body>
 </html>
