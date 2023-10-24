@@ -1,5 +1,21 @@
+var changeImage = function() {
+	// 랜덤 변수 
+	var index = Math.floor(Math.random() * imageViewer._images.length);
+	var info = imageViewer._images[index].split(":");
+	
+	// console.log(info);
+	
+	var title = info[0];
+	var src = '/ch07/images/' + info[1];
+	$("img")
+		.attr('src', src)
+		.attr('alt', title)
+		.attr('title', title);
+}
+
 var imageViewer = {
     _intervalId: null,
+    
     _images: [
         "국화:Chrysanthemum.jpg",
         "사막:Desert.jpg",
@@ -11,40 +27,25 @@ var imageViewer = {
         "툴립:Tulips.jpg"
     ],
 
-    init: function () {
-        var _this = this;
-
+    init: $(function () {
         $("#btn-change").click(function () {
-            _this.changeImage();
+            changeImage();
         });
 
         $("#btn-slideshow").click(function () {
-            if (_this._intervalId) {
-                clearInterval(_this._intervalId);
-                _this._intervalId = null;
+			var slideshow_btn = $("#btn-slideshow").text();
+			
+            if (slideshow_btn == "슬라이드쇼 중지") {
+                clearInterval(imageViewer._intervalId);
+                imageViewer._intervalId = null;
                 $("#btn-slideshow").text("슬라이드쇼 시작");
             } else {
-                _this.changeImage();
-                _this._intervalId = setInterval(function () {
-                    _this.changeImage();
+				changeImage();
+                imageViewer._intervalId = setInterval(function () {
+                    changeImage();
                 }, 1000);
                 $("#btn-slideshow").text("슬라이드쇼 중지");
             }
         });
-
-        // 초기 이미지 로딩
-        this.changeImage();
-    },
-
-    changeImage: function () {
-        var index = Math.floor(Math.random() * this._images.length);
-        var info = this._images[index].split(":");
-
-        var title = info[0];
-        var src = '/ch07/images/' + info[1];
-        $("img")
-            .attr('src', src)
-            .attr('alt', title)
-            .attr('title', title);
-    }
+    })
 };
