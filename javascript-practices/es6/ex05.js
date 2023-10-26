@@ -3,6 +3,7 @@
  * 
  */
 
+// 일반 함수
 const power = function(x) {
     return x*x;
 }
@@ -46,4 +47,3 @@ console.log("\n--------");
         process.stdout.write(`${n}: ${(x => x*x)(n)}\t`)
     }
 });
-
